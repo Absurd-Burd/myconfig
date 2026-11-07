@@ -1,0 +1,72 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Black Metal (Bathory) palette
+#   bg pill   #222222   fg        #c1c1c1
+#   rust      #e78a53   sand      #fbcb97
+#   teal-red  #5f8787   greys     #888888 #999999 #aaaaaa
+
+format = """
+${custom.home_icon}\
+${custom.folder_icon}\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$php\
+\n$character"""
+
+right_format = "$time"
+
+# Home icon only when you're in $HOME itself
+[custom.home_icon]
+when = 'test "$PWD" = "$HOME"'
+command = "echo ."
+format = "[\ue0b6](fg:#222222)[ \uf015](bg:#222222 fg:#c1c1c1)"
+
+# Folder icon everywhere else
+[custom.folder_icon]
+when = 'test "$PWD" != "$HOME"'
+command = "echo ."
+format = "[\ue0b6](fg:#222222)[ \uf07b](bg:#222222 fg:#c1c1c1)"
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+read_only = "\uf023 "
+read_only_style = "bg:#222222 fg:#5f8787"
+style = "bg:#222222 fg:#c1c1c1"
+format = "[ $path ]($style)[$read_only]($read_only_style)[\ue0b4](fg:#222222) "
+
+[git_branch]
+symbol = "\ue0a0"
+format = "[\ue0b6](fg:#222222)[ $symbol $branch ](bg:#222222 fg:#fbcb97)[\ue0b4](fg:#222222) "
+
+[git_status]
+format = "([\ue0b6](fg:#222222)[ $all_status$ahead_behind ](bg:#222222 fg:#fbcb97)[\ue0b4](fg:#222222) )"
+
+[nodejs]
+symbol = "\ue718"
+format = "[\ue0b6](fg:#222222)[ $symbol ($version) ](bg:#222222 fg:#aaaaaa)[\ue0b4](fg:#222222) "
+
+[rust]
+symbol = "\ue7a8"
+format = "[\ue0b6](fg:#222222)[ $symbol ($version) ](bg:#222222 fg:#aaaaaa)[\ue0b4](fg:#222222) "
+
+[golang]
+symbol = "\ue626"
+format = "[\ue0b6](fg:#222222)[ $symbol ($version) ](bg:#222222 fg:#aaaaaa)[\ue0b4](fg:#222222) "
+
+[php]
+symbol = "\ue73d"
+format = "[\ue0b6](fg:#222222)[ $symbol ($version) ](bg:#222222 fg:#aaaaaa)[\ue0b4](fg:#222222) "
+
+[time]
+disabled = false
+time_format = "%R"
+format = "[\ue0b6](fg:#222222)[ \U000f0954 $time ](bg:#222222 fg:#888888)[\ue0b4](fg:#222222)"
+
+[character]
+success_symbol = "[\u276f](bold #e78a53)"
+error_symbol = "[\u276f](bold #5f8787)"

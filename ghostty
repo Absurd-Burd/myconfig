@@ -1,0 +1,14 @@
+theme = "Black Metal (Bathory)"
+# Set the primary font family
+font-family = "JetBrains Mono"
+# Set the font size
+font-size = 20
+keybind = cmd+shift+r=reload_config
+
+cursor-color = #444444
+cursor-text = #ffffff
+
+window-padding-balance = true 
+window-save-state = always
+macos-titlebar-style=transparent
+window-colorspace = "display-p3"

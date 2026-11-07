@@ -1,0 +1,51 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "display": {
+    "color": {
+      "keys": "#888888",
+      "output": "#c1c1c1",
+      "separator": "#444444"
+    },
+    "key": { "width": 14 },
+    "separator": "  "
+  },
+
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",
+    "color": { "1": "#999999" },
+    "padding": { "left": 2, "right": 3, "top": 2 }
+  },
+
+  "modules": [
+    {
+      "type": "title",
+      "color": {
+        "user": "#e78a53",
+        "at": "#444444",
+        "host": "#5f8787"
+      }
+    },
+    {
+      "type": "custom",
+      "format": "──────────────────────────",
+      "outputColor": "#333333"
+    },
+
+    { "type": "os",      "key": "\uf17c os",     "keyColor": "#e78a53", "format": "{pretty-name}" },
+    { "type": "kernel",  "key": "\uf013 kernel", "keyColor": "#fbcb97" },
+    { "type": "wm",      "key": "\uf2d0 wm",     "keyColor": "#5f8787", "format": "{pretty-name}" },
+    { "type": "shell",   "key": "\uf120 shell",  "keyColor": "#aaaaaa", "format": "{pretty-name}" },
+    { "type": "uptime",  "key": "\uf017 uptime", "keyColor": "#999999" },
+
+    { "type": "cpu",     "key": "\uf2db cpu",    "keyColor": "#e78a53", "format": "{name}" },
+    { "type": "gpu",     "key": "\uf26c gpu",    "keyColor": "#5f8787", "format": "{name}" },
+    { "type": "memory",  "key": "\uf1c0 ram",    "keyColor": "#fbcb97", "format": "{used} / {total}" },
+
+    { "type": "terminalfont", "key": "\uf031 font", "keyColor": "#aaaaaa", "format": "{name} {size}" },
+
+    "break",
+    { "type": "colors", "symbol": "circle", "paddingLeft": 2 }
+  ]
+}
